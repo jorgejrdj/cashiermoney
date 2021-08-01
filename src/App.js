@@ -20,7 +20,7 @@ function App() {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
-        <div className="logo"> <DollarOutlined style={{ fontSize: '2rem', color: '#FEC63E' }} />  Cashier Market</div>
+        <div className="logo"> <DollarOutlined style={{ fontSize: '2rem', color: '#FEC63E' }} /> </div>
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
           <Menu.Item key="1" icon={<PieChartOutlined />}>
             Option 1
