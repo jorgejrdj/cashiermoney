@@ -22,23 +22,25 @@ const Cashier = () => {
     else {
       return qtd = qtd + 10;
     };
-
   }
 
   return (
+
     <div>
       <div className="site-card-wrapper">
         <h1> Caixa em uso por: </h1>
         <p>  - Jorge de Souza</p>
-        <Form layout="horizontal">
-          <Form.Item
-            name={['fullname']}
-            label='Nome Completo'
-          > <Input placeholder="Jorge de Souza" /></Form.Item>
-          <Form.Item name={['email']} label="E-mail"> <Input placeholder="Jorge@email.com" /></Form.Item>
-        </Form>
-
-
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Card style={{ flex: "1", margin: "10px", height: "150px" }}>
+            <Form layout="horizontal" handleCaixa>
+              <Form.Item
+                label='Total da Compras' layout="inline"
+              > <Input placeholder="Apenas Números" type="text" /></Form.Item>
+              <Form.Item><Button type="primary" size="large"
+                shape="round" layout="inline" htmlType="submit">Enviar</Button></Form.Item>
+            </Form>
+          </Card>
+        </div>
         <Row gutter={16}>
           <Col span={8}>
             <Card title="Moedas de R$ 0,01" style={{ padding: 16, margin: 8 }} type="inner" bordered={true}>
@@ -80,7 +82,7 @@ const Cashier = () => {
       </div>
       <Button style={{ marginTop: 16, width: "10%", alignItems: 'center' }} type="primary"
         size="large" shape="round" onClick={handleAbastecer}> Abastecer </Button>
-    </div>
+    </div >
   )
 }
 
