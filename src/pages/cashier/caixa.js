@@ -24,20 +24,23 @@ const Cashier = () => {
     };
   }
 
-  return (
+  function handleFinish(a) {
+    console.log(a)
+  }
 
+  return (
     <div>
       <div className="site-card-wrapper">
         <h1> Caixa em uso por: </h1>
         <p>  - Jorge de Souza</p>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Card style={{ flex: "1", margin: "10px", height: "150px" }}>
-            <Form layout="horizontal" handleCaixa>
+            <Form layout="horizontal" onFinish={handleFinish}>
               <Form.Item
                 label='Total da Compras' layout="inline"
               > <Input placeholder="Apenas Números" type="text" /></Form.Item>
-              <Form.Item><Button type="primary" size="large"
-                shape="round" layout="inline" htmlType="submit">Enviar</Button></Form.Item>
+              <Form.Item><Button type="primary" layout="inline" size="large" style={{ marginTop: 8, width: "10%", alignItems: 'center' }}
+                shape="round" layout="inline" htmlType="submit">Cobrar</Button></Form.Item>
             </Form>
           </Card>
         </div>
@@ -80,9 +83,9 @@ const Cashier = () => {
           </Col>
         </Row>
       </div>
-      <Button style={{ marginTop: 16, width: "10%", alignItems: 'center' }} type="primary"
+      <Button style={{ marginTop: 16, marginLeft: 32, width: "10%", alignItems: 'center' }} type="primary"
         size="large" shape="round" onClick={handleAbastecer}> Abastecer </Button>
-    </div >
+    </div>
   )
 }
 
